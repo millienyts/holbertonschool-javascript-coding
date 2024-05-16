@@ -1,14 +1,11 @@
 #!/usr/bin/node
 
 const fs = require('fs');
+const fileName = process.argv[2];
+const data = process.argv[3];
 
-const filePath = process.argv[2];
-const content = process.argv[3];
-
-fs.writeFile(filePath, content, 'utf-8', (err) => {
-  if (err) {
-    console.error(err);
-    return;
+fs.writeFile(fileName, data, 'utf-8', (error) => {
+  if (error) {
+    console.error(error);
   }
-  console.log('The file has been saved!');
 });
